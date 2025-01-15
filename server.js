@@ -79,11 +79,11 @@ app.get("/slack/oauth/callback", async (req, res) => {
       }));
 
     // Return the list of participants as JSON
-    res.json({
-      success: true,
-      participants: activeUsers,
-    });
-
+    // res.json({
+    //   success: true,
+    //   participants: activeUsers,
+    // });
+    res.redirect(`http://localhost:3000/success?team=${encodeURIComponent(activeUsers)}`)
     // Save accessToken securely in your database for future API calls
   } catch (error) {
     console.error("Error exchanging code for token:", error.message);
