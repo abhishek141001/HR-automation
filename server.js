@@ -83,7 +83,7 @@ app.get("/slack/oauth/callback", async (req, res) => {
     //   success: true,
     //   participants: activeUsers,
     // });
-    res.redirect(`http://localhost:3000/success?team=${encodeURIComponent(activeUsers)}`)
+    res.redirect(`https://hr-automation-client.netlify.app/success?team=${encodeURIComponent(activeUsers)}`)
     // Save accessToken securely in your database for future API calls
   } catch (error) {
     console.error("Error exchanging code for token:", error.message);
